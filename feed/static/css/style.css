@@ -1,3 +1,31 @@
 * {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+hr {
+    border: solid 1px #848484 10;
+ }
+
+#cont {
+    width: 700px;
+    margin: auto;
+}
+
+.header {
+    display: flex;
+}
+
+.message_username {
+    font-weight: bold;
+    margin-right: 0.5rem;
+ }
+
+ .message_created_at {
+    color: #424242;
+ }
+
+ .message_content {
+    font-size: 1.2rem;
+    padding: 0.5rem 0;
+ }
+

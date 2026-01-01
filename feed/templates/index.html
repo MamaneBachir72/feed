@@ -1,10 +1,15 @@
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
 
+<div id="cont">
 {% for message in messages %}
 <div>
-    <div>{{ message.content }}</div>
-    <div>{{message.username }}</div>
-    <div>{{message.created_at }}</div>
+    <div class="header">
+        <div class="message_username">{{message.username }}</div>
+        <div class="message_created_at">{{message.created_at }}</div>
+    </div>
+    <div class=" message_content ">{{ message.content }}</div>
 </div>
+<hr/>
 {% endfor %}
+</div>
