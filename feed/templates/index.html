@@ -1,6 +1,12 @@
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
 
+<form action="/" method="POST">
+    {% csrf_token %}
+    <input type="text" name="content" placeholder="écrire un message" />
+    <input type="submit" value="Poster"/>
+</form>
+
 <div id="cont">
 {% for message in messages %}
 <div>
