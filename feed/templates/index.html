@@ -1,21 +1,10 @@
-{% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+{% extends 'base.html' %}
 
-<form action="/" method="POST">
-    {% csrf_token %}
-    <input type="text" name="content" placeholder="écrire un message" />
-    <input type="submit" value="Poster"/>
-</form>
-
-<div id="cont">
-{% for message in messages %}
-<div>
-    <div class="header">
-        <div class="message_username">{{ message.user.username }}</div>
-        <div class="message_created_at">{{ message.created_at }}</div>
+{% block content %}
+    <div>{% include 'form.html' with form_action="/" %}</div>
+    <div>
+        {% for message in messages %}
+        <div>{% include 'message.html' with message=message %}</div>
+        {% endfor %}
     </div>
-    <div class=" message_content ">{{ message.content }}</div>
-</div>
-<hr/>
-{% endfor %}
-</div>
+{% endblock %}
